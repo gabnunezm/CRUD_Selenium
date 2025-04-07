@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concesionario de Vehículos</title>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center text-blue-800 mb-8">Mango Vehicles</h1>
+        
+        <!-- Formulario agregar/editar -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl font-semibold mb-4">Agregar Vehículo</h2>
+            <form id="vehicle-form" class="space-y-4">
+                <input type="hidden" id="vehicle-id">
+                <div>
+                    <label for="brand" class="block mb-2">Marca</label>
+                    <input type="text" id="brand" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label for="model" class="block mb-2">Modelo</label>
+                    <input type="text" id="model" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label for="year" class="block mb-2">Año</label>
+                    <input type="number" id="year" min="1900" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label for="price" class="block mb-2">Precio ($)</label>
+                    <input type="number" id="price" min="0" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label for="color" class="block mb-2">Color</label>
+                    <input type="text" id="color" required class="w-full p-2 border rounded">
+                </div>
+                <div class="flex space-x-4 pt-2">
+                    <button type="submit" id="save-btn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Guardar
+                    </button>
+                    <button type="button" id="clear-btn" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+                        Limpiar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Tabla de vehículos -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Vehículos Registrados</h2>
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-2 border">Marca</th>
+                        <th class="p-2 border">Modelo</th>
+                        <th class="p-2 border">Año</th>
+                        <th class="p-2 border">Precio</th>
+                        <th class="p-2 border">Color</th>
+                        <th class="p-2 border">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="vehicle-list">
+                    <!-- Los vehículos se cargarán aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
