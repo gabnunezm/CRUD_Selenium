@@ -10,7 +10,6 @@ if not os.path.exists("capturas"):
     os.makedirs("capturas")
 
 # Crear reporte HTML
-# Crear reporte HTML
 reporte = open("reporte.html", "w", encoding="utf-8")
 reporte.write("""
 <!DOCTYPE html>
